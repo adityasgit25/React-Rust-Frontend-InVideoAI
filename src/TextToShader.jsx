@@ -160,10 +160,15 @@ export default function TextToShader() {
   let gl;
   let angle = 0;
 
+
+
   const handleGenerateShader = async () => {
+
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
     try {
       setError(null);
-      const response = await axios.post("http://localhost:4000/api/generate-shader", {
+      const response = await axios.post(`${API_BASE_URL}/api/generate-shader`, {
         text: description,
       });
       
