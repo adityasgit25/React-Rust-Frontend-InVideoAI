@@ -163,15 +163,11 @@ export default function TextToShader() {
 
 
   const handleGenerateShader = async () => {
-
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://elixir-phoenix-backend-invideoai.onrender.com";
-
-    console.log(API_BASE_URL);
     
 
     try {
       setError(null);
-      const response = await axios.post(`${API_BASE_URL}/api/generate-shader`, {
+      const response = await axios.post(`https://elixir-phoenix-backend-invideoai.onrender.com/api/generate-shader`, {
         text: description,
       });
       
